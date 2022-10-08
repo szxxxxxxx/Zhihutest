@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>知乎</title>
+    <style>
+        /* 整体 */
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        /* 去掉圆点 */
+        li{
+            list-style: none;
+        }
+        /* 去掉下划线 */
+        a{
+            text-decoration: none;
+            color: #000;
+        }
+        body{
+            background-color:rgb(246, 246, 246);
+        }
+        /* 顶部区域 */
+        div {
+x           display: block;
+            background-color: white;
+            height: 45px;
+            line-height: 28px;
+            border-bottom: 3px solid rgb(243, 243, 243);
+        }
+        /* 顶部导航栏 */
+        .nav{
+            float: left;
+            margin-left: 20px;
+            padding-left: 90px;
+        }
+        .nav ul li{
+            float: left;
+        }
+        .nav ul li a{
+            float: left;
+            display: block;
+            height: 40px;
+            padding: 20px;
+            line-height: 10px;
+            color: #000;
+        }
+        .nav ul li a:hover{
+            color:rgb(33, 123, 232);
+        }
+        /* 搜索栏 */
+        .search{
+            float: left;
+            margin: 8px 0 5px 65px;
+            width: 400px;
+            height: 30px;
+            background-color: rgb(246, 246, 246);
+            border-radius:20px;
+        }
+        .search input{
+            float: left;
+            margin-top: 3px;
+            width: 350px;
+            height: 25px;
+            border-color: transparent;
+            background-color: rgb(246, 246, 246);
+        }
+        .search button{
+            float: left;
+            width: 45px;
+            height: 30px;
+            border:0;
+            border-radius: 20px;
+            background-color:rgb(10, 112, 232) ;
+        }
+        /* 功能 */
+        img{
+            margin-left: 60px;
+        }
+        #sheet{
+            border: 0;
+            height: 30px;
+            width: 80px;
+            background-color: rgb(246, 246, 246);
+            border-radius: 10px;
+            margin-left: 20px;
+        }
+        .box1 {
+            float: left;
+            width: 680px;
+            height: 1270px;
+            margin-left: 220px;
+            border: 2px solid rgb(236, 236, 236);
+            background-color:white;
+        }
+        .box1 ul li{
+            float: left;
+            padding-left: 20px;
+            border-bottom: 2px solid rgb(243, 243, 243);
+        }
+        .box1 ul li a{
+            float: left;
+            display: block;
+            height: 12px;
+            line-height: 10px;
+            padding:18px 19px;
+        }
+        .box1 ul li a:hover{
+            color:rgb(33, 123, 232);
+        }
+        .box1 h4 a:hover{
+            color: rgb(64, 90, 235);
+        }
+        /* .box1 .case1{
+            width: 630px;
+            height: 120px;
+            border-bottom: 2px solid rgb(243, 243, 243);
+        } */
+        .case1 img,
+        a{
+            float: left;
+        }
+        .case1 img{
+            width: 120px;
+            height: 80px;
+        }
+        .box1 .case1 a:hover{
+            color: rgb(100, 100, 100);
+        }
+        .case1 input{
+            height: 20px;
+            line-height: 20px;
+            padding:0 20px;
+            margin: 10px;
+            background-color: rgb(230, 240, 253);
+            color: rgb(5, 109, 232);
+            border: 0;
+            border-radius: 5px;
+        }
+        .case1 input:hover{
+            background-color: rgb(218, 233, 252);
+        }
+        .box1 .case2 a:hover{
+            color: rgb(100, 100, 100);
+        }
+        .case2 input{
+            height: 20px;
+            line-height: 20px;
+            padding:0 20px;
+            margin: 10px;
+            background-color: rgb(230, 240, 253);
+            color: rgb(5, 109, 232);
+            border: 0;
+            border-radius: 5px;
+        }
+        .case2 input:hover{
+            background-color: rgb(218, 233, 252);
+        }
+        .box1 .case3 a:hover{
+            color: rgb(100, 100, 100);
+        }
+        .case3 input{
+            height: 20px;
+            line-height: 20px;
+            padding:0 20px;
+            margin: 10px;
+            background-color: rgb(230, 240, 253);
+            color: rgb(5, 109, 232);
+            border: 0;
+            border-radius: 5px;
+        }
+        .case3 input:hover{
+            background-color: rgb(218, 233, 252);
+        }
+        .case5 img,
+        a{
+            float: left;
+        }
+        .case5 img{
+            width: 120px;
+            height: 80px;
+        }
+        .box1 .case5 a:hover{
+            color: rgb(100, 100, 100);
+        }
+        .case5 input{
+            height: 20px;
+            line-height: 20px;
+            padding:0 20px;
+            margin: 10px;
+            background-color: rgb(230, 240, 253);
+            color: rgb(5, 109, 232);
+            border: 0;
+            border-radius: 5px;
+        }
+        .case5 input:hover{
+            background-color: rgb(218, 233, 252);
+        }
+        .box2 {
+            float: left;
+            display: block;
+            width: 280px;
+            height: 1130px;
+            margin-left: 8px;
+            border: 2px solid rgb(240, 242, 247);
+            background-color:white;
+        }
+        .box2 .create{
+            width: 280px;
+            height: 350px;
+            margin: 20px auto;
+            border-bottom: 2px solid rgb(240, 242, 247);
+        }
+        .box2 .create p a{
+            color: rgb(133, 144, 166);
+        }
+        .box2 .create input{
+            border: 0;
+            border-radius: 30px;
+            padding:0 3px;
+            margin:15px 8px;
+            height: 50px;
+        }
+        .box2 .create .a{
+            color: rgb(0, 102, 255);
+            background-color: rgb(225, 237, 255);
+        }
+        .box2 .create .b{
+            color: rgb(255, 150, 7);
+            background-color: rgb(255, 243, 225);
+        }
+        .box2 .create .c{
+            color: rgb(244, 200, 7);
+            background-color: rgb(254, 249, 225);
+        }
+        .box2 .create .d{
+            color:rgb(38, 191, 191);
+            background-color: rgb(229, 248, 248);
+        }
+        .box2 .create .a:hover{
+            background-color: rgb(179, 209, 255);
+        }
+        .box2 .create .b:hover{
+            background-color: rgb(255, 224, 181);
+        }
+        .box2 .create .c:hover{
+            background-color: rgb(252, 239, 181);
+        }
+        .box2 .create .d:hover{
+            background-color: rgb(190, 236, 236);
+        }
+        .box2 .create .person{
+            height: 100px;
+            width: 200px;
+            margin: 20px 28px;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: rgb(249, 249, 251);
+        }
+        .box2 .create .start{
+            width: 230px;
+            height: 35px;
+            margin: 15px 28px;
+            border:1px solid rgb(129, 181, 243);
+        }
+        .box2 .create .start a{
+            color:rgb(5, 109, 232);
+            padding: 5px 65px;
+        }
+        .box2 .recommend p button{
+            border: 0;
+            background-color: #fff;
+            color: rgb(4, 97, 207);
+            margin: 10px 10px;
+        }
+        .box2 .recommend{
+            height: 180px;
+            margin: 10px 10px;
+        }
+        .box2 .function{
+            width: 280px;
+            height: 150px;
+            margin: 10px auto;
+        }
+        .box2 .function input{
+            border: 0;
+            border-radius: 30px;
+            padding:0 7px;
+            margin:10px 20px;
+            height: 40px;
+        }
+        .box2 .function .a{
+            background-color: rgb(255, 207, 0);
+        }
+        .box2 .function .b{
+            background-color: rgb(67, 212, 128);
+        }
+        .box2 .function .c{
+            background-color: rgb(0, 102, 255);
+        }
+        .box2 .function .d{
+            background-color: rgb(15, 136, 235);
+        }
+        .box2 .function .e{
+            background-color: rgb(84, 120, 240);
+        }
+        .box2 .function .f{
+            background-color: rgb(88, 104, 209);
+        }
+        .box2 .function .a:hover,
+        .box2 .function .b:hover,
+        .box2 .function .c:hover,
+        .box2 .function .d:hover,
+        .box2 .function .e:hover,
+        .box2 .function .f:hover{
+            color:white;
+        }
+        .box2 .personal a{
+            height: 40px;
+            color:rgb(138, 149, 170);
+            display: inline-block;
+        }
+        .box2 .personal .collection,
+        .box2 .personal .question,
+        .box2 .personal .invitation,
+        .box2 .personal .balance,
+        .box2 .personal .mycoupon,
+        .box2 .personal .center,
+        .box2 .personal .help,
+        .box2 .personal .copyright{
+            text-align: center;
+            padding:5px 100px 5px 10px;
+        }
+        .box2 .personal .collection:hover,
+        .box2 .personal .question:hover,
+        .box2 .personal .invitation:hover,
+        .box2 .personal .balance:hover,
+        .box2 .personal .mycoupon:hover,
+        .box2 .personal .center:hover,
+        .box2 .personal .help:hover,
+        .box2 .personal .copyright:hover{
+            background-color: rgb(246, 246, 246);
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="nav">
+            <ul>
+                <li><a href="#" style="color:rgb(5, 109, 232);font-size: 30px;">知乎</a>
+                <li><a href="#"><strong>首页</strong></a></li>
+                <li><a href="#">会员</a></li>
+                <li><a href="#">发现</a></li>
+                <li><a href="#">等你来答</a></li>
+            </ul>
+        </div>
+        <div class="search">
+            <input type="text" name="搜索内容" placeholder="知乎，分享你刚编的故事">
+            <button>搜索</button>
+        </div>
+        <img src="标签.png">
+        <select id="sheet">
+            <option>个人中心</option>
+            <option>无障碍</option>
+            <option>设置</option>
+            <option>退出</option>
+        </select>
+    </div>
+    <div class="box1">
+        <ul>
+            <li><a href="#" style="padding-left: 0;">关注</a></li>
+            <li><a href="#" style="color:rgb(5, 109, 232);">推荐</a></li>
+            <li><a href="#">热榜</a></li>
+            <li><a href="#">视频</a></li>
+        </ul>
+        <div class="case1">
+            <br><br><a href="#" style="font-weight:700;font-size:20px;padding-left: 15px;">拥有稀有的名字是一种怎样的体验？</a><br>
+            <img src="1.jpg"><a href="#">刘无恙： 姓氏不稀有，只是名字还算稀有(///▽///)…阅读全文​</a>
+            <br><br><br><input type="button" value="赞同"><input type="button" value="反对"><input type="button" value="评论"><input type="button" value="分享">
+            <input type="button" value="收藏"><input type="button" value="喜欢"><input type="button" value="更多">
+        </div>
+        <div class="case2">
+            <br><br><br><br><br><br>
+            <a href="#" style="font-weight:700;font-size:20px;padding-left: 15px;">你心目中最伟大的十部小说是什么？</a><br>
+            <a href="#">​匿名用户： 既然是我心目中的，那就可以在文学地位和个人口味之间进行调和了。 只列长篇，短篇不算在内。 排名无先后顺序（大致倾向还是有的）： 1—20 安娜卡列…阅读全文​</a>
+            <br><input type="button" value="赞同"><input type="button" value="反对"><input type="button" value="评论"><input type="button" value="分享">
+            <input type="button" value="收藏"><input type="button" value="喜欢"><input type="button" value="更多">
+        </div>
+        <div class="case3">
+            <br><br><br><br><br><br><br><br><br><br>
+            <a href="#" style="font-weight:700;font-size:20px;padding-left: 15px;">你在辩论赛赛场上听到最惊艳的话是什么？​</a><br>
+            <a href="#">有被冒犯到： “如果你有超能力，可以让你爱的人也爱你，你要不要使用？什么叫情非得已，什么叫做情难自禁，为什么我们在描述恋爱的感觉的时候，我们说的是坠入…阅读全文​​</a>
+            <br><input type="button" value="赞同"><input type="button" value="反对"><input type="button" value="评论"><input type="button" value="分享">
+            <input type="button" value="收藏"><input type="button" value="喜欢"><input type="button" value="更多">
+        </div>
+        <div class="case5">
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <a href="#" style="font-weight:700;font-size:20px;padding-left: 15px;">​零零后会觉得自己比任何人都看的透彻吗？</a><br>
+            <img src="2.jpg"><a href="#">匿名用户：没有 本人04年，18岁，还在读书，文科生，<br>准备上高三，但我似乎已经一眼看到了自己的未来…阅读全文​</a><br>
+            <br><br><input type="button" value="赞同"><input type="button" value="反对"><input type="button" value="评论"><input type="button" value="分享">
+            <input type="button" value="收藏"><input type="button" value="喜欢"><input type="button" value="更多">
+        </div>
+    </div>
+    <div class="box2">
+        <div class="create">
+            <p>创作中心<a href="#">草稿箱</a></p>
+            <input type="button" value="回答问题" class="a"><input type="button" value="发视频" class="b">
+            <input type="button" value="写文章" class="c"><input type="button" value="写想法" class="d">
+            <div class="person">
+                <p>开启你的知乎创作之旅</p>
+                <p style="font-size:12px;color:rgb(162, 162, 162);">发布首篇内容，开通创作中心 快来成为知乎创作者吧～</p>
+            </div>
+            <div class="start">
+                <a href="#">+开始创作</a>
+            </div>
+        </div>
+        <div class="recommend">
+            <p>推荐关注</p>
+            <p>XXXXXXXXXXXXXXXXXX<button>+关注</button></p>
+            <p>XXXXXXXXXXXXXXXXXX<button>+关注</button></p>
+            <p>XXXXXXXXXXXXXXXXXX<button>+关注</button></p>
+            <p>XXXXXXXXXXXXXXXXXX<button>+关注</button></p>
+        </div>
+        <div class="function">
+            <input type="button" value="live" class="a"><input type="button" value="书店" class="b">
+            <input type="button" value="圆桌" class="c"><br><input type="button" value="专栏" class="d">
+            <input type="button" value="付费咨询" class="e"><input type="button" value="百科" class="f">
+        </div>
+        <div class="personal">
+            <div class="collection"><a href="#">我的收藏</a></div>
+            <div class="question"><a href="#">我关注的问题</a></div>
+            <div class="invitation"><a href="#">我的邀请</a></div>
+            <div class="balance"><a href="#">我的余额</a></div>
+            <div class="mycoupon"><a href="#">我的礼券</a></div>
+            <div class="center"><a href="#">站务中心</a></div>
+            <div class="help"><a href="#">帮助与客服</a></div>
+            <div class="copyright"><a href="#">版权服务中心</a></div>
+        </div>
+    </div>
+</body>
+</html>
